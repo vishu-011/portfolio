@@ -1,14 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>my portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Use Inter font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scroll-to-top button styling */
+        #scrollToTopBtn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 50;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+    </style>
 </head>
-<body>
-	<h1>MY PORTFOLIO</h1>
-<h2>commming soon....</h2>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Scroll to Top Button -->
+    <div id="scrollToTopBtn" class="hidden p-3 rounded-full bg-blue-600 text-white shadow-lg hover:bg-blue-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo/Name -->
+            <a href="#hero" class="text-2xl font-bold text-gray-900">
+                John Doe
+            </a>
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="#about" class="text-lg font-medium hover:text-blue-600 transition-colors duration-300">About</a>
+                <a href="#projects" class="text-lg font-medium hover:text-blue-600 transition-colors duration-300">Projects</a>
+                <a href="#contact" class="text-lg font-medium hover:text-blue-600 transition-colors duration-300">Contact</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg pb-4">
+            <a href="#about" class="block px-6 py-3 text-lg font-medium hover:bg-gray-100 transition-colors duration-300">About</a>
+            <a href="#projects" class="block px-6 py-3 text-lg font-medium hover:bg-gray-100 transition-colors duration-300">Projects</a>
+            <a href="#contact" class="block px-6 py-3 text-lg font-medium hover:bg-gray-100 transition-colors duration-300">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6">
+        <!-- Hero Section -->
+        <section id="hero" class="py-20 md:py-32 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
+                Hi, I'm John Doe.
+                <br>
+                A <span class="text-blue-600">Software Developer</span>.
+            </h1>
+            <p class="mt-6 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+                I build beautiful and functional websites and applications. Welcome to my portfolio where you can explore my work.
+            </p>
+            <a href="#projects" class="mt-8 inline-block px-8 py-4 bg-blue-600 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105">
+                View My Work
+            </a>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900">About Me</h2>
+            <div class="mt-12 flex flex-col md:flex-row items-center md:space-x-12">
+                <div class="md:w-1/3 mb-8 md:mb-0">
+                    <img src="https://placehold.co/400x400/2563eb/ffffff?text=John+Doe" alt="John Doe" class="rounded-full shadow-xl w-64 h-64 mx-auto object-cover transform transition-transform duration-500 hover:scale-105">
+                </div>
+                <div class="md:w-2/3 text-lg text-gray-600 leading-relaxed">
+                    <p class="mb-4">
+                        I am a passionate and results-driven software developer with expertise in front-end and back-end technologies. I specialize in creating robust and scalable web applications using modern frameworks and tools. My goal is to build user-centric solutions that are both visually appealing and highly performant.
+                    </p>
+                    <p>
+                        In my free time, I enjoy exploring new technologies, contributing to open-source projects, and staying up-to-date with the latest industry trends. I am always eager to take on new challenges and collaborate with like-minded individuals.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900">My Projects</h2>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Project Card 1 -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2">
+                    <img src="https://placehold.co/600x400/60a5fa/ffffff?text=Project+1" alt="Project 1" class="rounded-t-xl w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900">Project Title 1</h3>
+                        <p class="mt-2 text-gray-600">A brief description of the project, the technologies used, and what it does.</p>
+                        <a href="#" class="mt-4 inline-block text-blue-600 font-medium hover:underline">View Project &rarr;</a>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2">
+                    <img src="https://placehold.co/600x400/93c5fd/ffffff?text=Project+2" alt="Project 2" class="rounded-t-xl w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900">Project Title 2</h3>
+                        <p class="mt-2 text-gray-600">A brief description of the project, the technologies used, and what it does.</p>
+                        <a href="#" class="mt-4 inline-block text-blue-600 font-medium hover:underline">View Project &rarr;</a>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2">
+                    <img src="https://placehold.co/600x400/3b82f6/ffffff?text=Project+3" alt="Project 3" class="rounded-t-xl w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900">Project Title 3</h3>
+                        <p class="mt-2 text-gray-600">A brief description of the project, the technologies used, and what it does.</p>
+                        <a href="#" class="mt-4 inline-block text-blue-600 font-medium hover:underline">View Project &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Get in Touch</h2>
+            <p class="mt-4 text-lg text-gray-600 max-w-xl mx-auto">
+                I'm always open to new opportunities and collaborations. Feel free to reach out!
+            </p>
+            <div class="mt-8 space-x-4">
+                <a href="mailto:johndoe@example.com" class="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300">
+                    Email Me
+                </a>
+                <a href="#" class="inline-block px-6 py-3 bg-gray-200 text-gray-800 font-semibold rounded-full shadow-lg hover:bg-gray-300 transition-colors duration-300">
+                    LinkedIn
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white text-center py-6 border-t border-gray-200">
+        <p class="text-gray-500">&copy; 2024 John Doe. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Scroll to top button functionality
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.remove('hidden');
+            } else {
+                scrollToTopBtn.classList.add('hidden');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
-<footer>
-</footer>
 </html>
